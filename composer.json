@@ -1,0 +1,29 @@
+{
+  "name": "codeinchq/lib-datetime",
+  "version": "1.0.0",
+  "description": "Code Inc.'s datetime library",
+  "homepage": "https://github.com/codeinchq/lib-datetime",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "CodeInc\\DateTime\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    }
+  },
+  "authors": [
+    {
+      "name": "Joan Fabrégat",
+      "email": "joan@codeinc.fr",
+      "homepage": "https://www.codeinc.fr",
+      "role": "developer"
+    }
+  ]
+}
