@@ -1,12 +1,12 @@
 {
   "name": "codeinchq/lib-datetime",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Code Inc.'s datetime library",
   "homepage": "https://github.com/codeinchq/lib-datetime",
   "type": "library",
   "license": "MIT",
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.2"
   },
   "autoload": {
     "psr-4": {

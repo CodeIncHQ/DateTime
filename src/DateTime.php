@@ -29,87 +29,89 @@ namespace CodeInc\DateTime;
  * @author Joan Fabrégat <joan@codeinc.fr>
  */
 class DateTime extends \DateTime {
-	const DEFAULT_TIME = 'now';
-	const SQL_DATE = 'Y-m-d';
-	const SQL_DATETIME = self::SQL_DATE.' H:i:s';
-	const SQL_EMPTY_DATE = '0000-00-00';
-	const SQL_EMPTY_DATETIME = self::SQL_EMPTY_DATE.' 00:00:00';
-	const RFC_1123 = 'D, d M Y H:i:s \\G\\M\\T';
+	// default time
+	public const DEFAULT_TIME = 'now';
+
+	// date formats
+	public const FORMAT_SQL_DATE = 'Y-m-d';
+	public const FORMAT_SQL_DATETIME = self::FORMAT_SQL_DATE.' H:i:s';
+	public const FORMAT_RFC_1123 = 'D, d M Y H:i:s \\G\\M\\T';
 
 	/**
-	 * Constructor. Unlike the native DateTime constructor, it is possile to pass a timestamp as the $time parameter.
+	 * Constructor. Unlike the native DateTime constructor, it is possible to pass a timestamp to the constructor.
 	 *
 	 * @param string|int $time
 	 * @param \DateTimeZone $dateTimeZone
 	 */
-	public function __construct($time = null, \DateTimeZone $dateTimeZone = null) {
-		parent::__construct(empty($time) || is_numeric($time) ? 'now' : $time, $dateTimeZone);
+	public function __construct($time = null, \DateTimeZone $dateTimeZone = null)
+	{
+		parent::__construct(
+			($time === null || is_numeric($time)) ? self::DEFAULT_TIME : $time,
+			$dateTimeZone
+		);
 		if (is_numeric($time)) {
 			$this->setTimestamp($time);
 		}
 	}
 
 	/**
-	 * Vérifie si la date est indéfinie
-	 *
 	 * @return bool
 	 */
-	public function isUndefined() {
+	public function isUndefined():bool
+	{
 		return in_array($this->getTimestamp(), [-62169984561, 0]);
 	}
 
 	/**
-	 * Vérifie si le temps courant est dans le passé
-	 *
 	 * @return bool
 	 */
-	public function isPast() {
+	public function isPast():bool
+	{
 		return $this->getTimestamp() < time();
 	}
 
 	/**
-	 * Vérifie si le temps courant est maintenant
-	 *
 	 * @return bool
 	 */
-	public function isNow() {
+	public function isNow():bool
+	{
 		return $this->getTimestamp() == time();
 	}
 
 	/**
-	 * Vérifie si le temps courant est dans le futur
-	 *
 	 * @return bool
 	 */
-	public function isFutur() {
+	public function isFutur():bool
+	{
 		return $this->getTimestamp() > time();
 	}
 
 	/**
 	 * Retourne la date formatée au foramt SQL date (AAAA-MM-JJ)
-	 *
-	 * @return string
 	 */
-	public function getSQLDate() {
-		return $this->format($this::SQL_DATE);
+	public function getSqlDate():string
+	{
+		return $this->format($this::FORMAT_SQL_DATE);
 	}
 
 	/**
-	 * Retourne la date formatée au foramt SQL datetime (AAAA-MM-JJ HH:MM:SS)
+	 * Returns AAAA-MM-JJ HH:MM:SS
 	 *
 	 * @return string
 	 */
-	public function getSQLDateTime() {
-		return $this->format($this::SQL_DATETIME);
+	public function getSqlDateTime():string
+	{
+		return $this->format($this::FORMAT_SQL_DATETIME);
 	}
 
 	/**
-	 * Retourne la date formatée au format RFC 1123
+	 * Returns a RFC 1123 date
 	 *
-	 * @see https://tools.ietf.org/html/rfc1123
+	 * @link https://tools.ietf.org/html/rfc1123
 	 * @return string
 	 */
-	public function getRfc1123() {
-		return $this->format($this::RFC_1123);
+	public function getRfc1123():string
+	{
+		return $this->format($this::FORMAT_RFC_1123);
 	}
 }
