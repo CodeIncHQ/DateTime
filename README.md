@@ -36,3 +36,15 @@ $dateTime::FORMAT_SQL_DATE;
 $dateTime::FORMAT_SQL_DATETIME;
 $dateTime::FORMAT_RFC_1123;
 ```
+
+
+## Installation
+This library is available through [Packagist](https://packagist.org/packages/codeinc/lib-datetime) and can be installed using [Composer](https://getcomposer.org/): 
+
+```bash
+composer require codeinc/lib-datetime
+```
+
+# License
+
+The library is published under the MIT license (see [`LICENSE`](LICENSE) file).
