@@ -41,7 +41,7 @@ $dateTime::FORMAT_RFC_1123;
 
 
 ## Installation
-This library is available through [Packagist](https://packagist.org/packages/codeinc/lib-datetime) and can be installed using [Composer](https://getcomposer.org/): 
+This library is available through [Packagist](https://packagist.org/packages/codeinc/datetime) and can be installed using [Composer](https://getcomposer.org/): 
 
 ```bash
 composer require codeinc/datetime
