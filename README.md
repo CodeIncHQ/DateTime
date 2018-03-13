@@ -1,4 +1,6 @@
-# Code Inc.'s datetime library
+# DateTime library
+ 
+ The is just an overlayoer above the native PHP [DateTime](http://php.net/manual/fr/class.datetime.php) class with extra methods.
  
 ### Usage
 ```php
@@ -42,9 +44,9 @@ $dateTime::FORMAT_RFC_1123;
 This library is available through [Packagist](https://packagist.org/packages/codeinc/lib-datetime) and can be installed using [Composer](https://getcomposer.org/): 
 
 ```bash
-composer require codeinc/lib-datetime
+composer require codeinc/datetime
 ```
 
-# License
+## License
 
 The library is published under the MIT license (see [`LICENSE`](LICENSE) file).

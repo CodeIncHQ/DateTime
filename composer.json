@@ -1,8 +1,8 @@
 {
-  "name": "codeinc/lib-datetime",
-  "version": "1.1.1",
+  "name": "codeinc/datetime",
+  "version": "1.2.0",
   "description": "Code Inc.'s datetime library",
-  "homepage": "https://github.com/CodeIncHQ/lib-datetime",
+  "homepage": "https://github.com/CodeIncHQ/DateTime",
   "type": "library",
   "license": "MIT",
   "require": {

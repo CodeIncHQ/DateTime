@@ -17,7 +17,7 @@
 // Author:   Joan Fabrégat <joan@codeinc.fr>
 // Date:     29/01/2018
 // Time:     18:25
-// Project:  lib-datetime
+// Project:  DateTime
 //
 namespace CodeInc\DateTime;
 
